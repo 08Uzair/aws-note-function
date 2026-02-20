@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient, DeleteCommand } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBDocumentClient, DeleteCommand ,ScanCommand} from "@aws-sdk/lib-dynamodb";
 
 const client = new DynamoDBClient({
   region: "ap-south-2",
@@ -70,3 +70,4 @@ app.delete("/notes/:note_id", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`SERVER IS RUNNING ON PORT : ${PORT}`);
 });
+
